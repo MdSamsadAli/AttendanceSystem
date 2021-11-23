@@ -1,0 +1,150 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: 0;
+}
+.head-1{
+	background: #07c530;
+	text-align: center;
+	font-family: 'Courgette', cursive;
+}
+.head-1 h1 {
+	color: #fff;
+	padding: 10px 0;
+	letter-spacing: 3px;
+
+}
+.head-2 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 20px;
+	border-bottom: 1px solid #e7e2e2;
+	font-family: 'Courgette', cursive;
+}
+.head-2 h2 {
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+.head-2 button{
+	background: #07c530;
+	outline: none;
+	border: none;
+	padding: 10px 14px;
+	color: #fff;
+	box-shadow: 1px 2px 5px 0px rgba(32 14 52);
+	border-radius: 10px;
+	transition: all .5s ease;
+}
+.head-2 button:hover {
+	background: white;
+	color: black;
+}
+.container {
+	padding-top: 50px;
+	border-bottom: 1px solid #e7e2e2;
+}
+
+.row {
+	width: 60%;
+	margin: 0 auto;
+	font-family: cursive;
+}
+.col-1 {
+	width: 45%;
+}
+.col-2{
+	width: 30%;
+}
+.col-1 input, .col-2 input {
+	width: 100%;
+	font-size: 20px;
+	outline: none;
+	padding: 8px;
+	border: 1px solid #777;
+	border-radius: 10px;
+	margin-bottom: 18px;
+}
+
+.btn input[type="submit"]{
+	margin-top: 10px;
+	margin-bottom: 25px;
+	padding: 8px;
+	border-radius: 10px;
+	width: 30%;
+	background: #07c530;
+	color: white;
+	outline: none;
+	border: none;
+	box-shadow: 1px 2px 5px 0px rgba(32 14 52);
+	transition: all .5s ease;
+}
+.btn input[type="submit"]:hover {
+	background: white;
+	color: black;
+}
+
+.btn a{
+	padding: 8px 20px;
+	text-decoration: none;
+	border-radius: 10px;
+	width: 30%;
+	background: #07c530;
+	color: white;
+	outline: none;
+	border: none;
+	box-shadow: 1px 2px 5px 0px rgba(32 14 52);
+	transition: all .5s ease;
+}
+.btn a:hover {
+	background: white;
+	color: black;
+}
+.btn {
+	text-align: center;
+}
+.form-control {
+	display: flex;
+	justify-content: space-between;
+}
+table{
+	margin-bottom: 40px;
+}
+
+table, tr, th, td {
+	border-collapse: collapse;
+	border: 1px solid #777;
+	padding: 10px 20px;
+	background: #444;
+	color: white;
+	text-align: center;
+	letter-spacing: 2px;
+}
+button{
+	padding: 8px 20px;
+	outline: none;
+	border: none;
+	color: white;
+	transition: all .5s;
+	border-radius: 10px;
+	box-shadow: 1px 2px 5px 0px rgba(32 14 52);
+}
+.btn-1 button {
+	background: white;
+	color: black;
+}
+.btn-1 button:hover{
+	background: green;
+	color: white;
+}
+.btn-2 button {
+	background: green;
+}
+.btn-2 button:hover {
+	background: red;
+	color: white;
+}
+.text-center{
+	text-align: center;
+	margin-bottom: 15px;
+}
