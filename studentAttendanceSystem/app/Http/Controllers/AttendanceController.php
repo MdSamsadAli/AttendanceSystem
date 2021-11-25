@@ -14,13 +14,13 @@ class AttendanceController extends Controller
      */
     public function index()
     {
-        $attendance = StudentAttendance::get(); 
+        $attendance = StudentAttendance::get();
         return view('student.index', compact('attendance'));
     }
 
     public function attendancesheet()
     {
-        $attendance = StudentAttendance::get(); 
+        $attendance = StudentAttendance::get();
         return view('student.attendancesheet', compact('attendance'));
     }
 
@@ -38,26 +38,26 @@ class AttendanceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         // dd($request->all());
         $attendance = new StudentAttendance();
-        $attendance -> studentname =$request->get('studentname');
-        $attendance -> rollnumber =$request->get('rollnumber');
-        $attendance -> faculty =$request->get('faculty');
-        $attendance -> semester =$request->get('semester');
-        $attendance -> section =$request->get('section');
-        $attendance -> save();
+        $attendance->studentname = $request->get('studentname');
+        $attendance->rollnumber = $request->get('rollnumber');
+        $attendance->faculty = $request->get('faculty');
+        $attendance->semester = $request->get('semester');
+        $attendance->section = $request->get('section');
+        $attendance->save();
         return redirect()->route('student.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -68,7 +68,7 @@ class AttendanceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -79,8 +79,8 @@ class AttendanceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -91,11 +91,26 @@ class AttendanceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
+    }
+
+    public function saveAttendance(Request $request)
+    {
+        $studentId = $request->get('student_id');
+        $attendance = $request->get('attendance');
+        if (sizeof($studentId) > 0) {
+            foreach ($studentId as $i => $student) {
+                $std = StudentAttendance::find($student);
+                if (!empty($std)) {
+                    $std->attendance = $attendance[$i];
+                    $std->save();
+                }
+            }
+        }
     }
 }

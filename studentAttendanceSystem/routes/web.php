@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::get('student/index', [AttendanceController::class, 'index'])->name('student.index');
 Route::post('student/store', [AttendanceController::class, 'store'])->name('student.store');
+Route::post('student/save-attendance', [AttendanceController::class, 'saveAttendance'])->name('student-attendance-save');
 
 Route::get('student/attendancesheet', [AttendanceController::class, 'attendancesheet'])->name('student.attendancesheet');
 
